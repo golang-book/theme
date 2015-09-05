@@ -6,6 +6,11 @@
   size: 6in 9in; /* width, height */
   margin-top: 0.75in; /* white space around the page */
   margin-bottom: 0.75in;
+
+  @bottom {
+    content: counter(page) "/" counter(pages);
+    text-align: center;
+  }
 }
 
 * {
