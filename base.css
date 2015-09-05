@@ -26,6 +26,10 @@ section[data-type="chapter"] {
   counter-increment: ChapterNumber;
 }
 
+section[data-type="sect1"] {
+  counter-increment: SectionNumber;
+}
+
 section[data-type="chapter"] h1 {
   position: relative;
   margin-left: 0.5in;
@@ -35,8 +39,21 @@ section[data-type="chapter"] h1 {
   font-weight: bold;
 }
 
-section[data-type="chapter"] > h1:before {
+section[data-type="chapter"] h2 {
+  font-size: 13pt;
+  font-weight: bold;
+  margin-left: 0.5in;
+  margin-bottom: 0.25in;
+}
+
+section[data-type="chapter"] h1:before {
   content: counter(ChapterNumber);
+  position: absolute;
+  top: 0;
+  left: -0.5in;
+}
+section[data-type="chapter"] h2:before {
+  content: counter(ChapterNumber).counter(SectionNumber);
   position: absolute;
   top: 0;
   left: -0.5in;
