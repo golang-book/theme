@@ -1,11 +1,10 @@
 @charset "UTF-8";
 
-@import "../base.css"
+@import "../base.css";
 
-
-@page { /* defining overall trim size and page layout */
-  size: 6in 9in; /* width, height */
-  margin-top: 0.75in; /* white space around the page */
+@page {
+  size: 6in 9in;
+  margin-top: 0.75in;
   margin-bottom: 0.75in;
 }
 
