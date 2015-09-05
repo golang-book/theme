@@ -106,6 +106,13 @@ img {
   max-width: 100%;
 }
 
-section.problems {
+section[data-type="chapter"] .problems {
   page-break-before: always;
+}
+
+section[data-type="chapter"] .problems h2 {
+  margin-left: 0;
+}
+section[data-type="chapter"] .problems h2:before {
+  content: "";
 }

@@ -8,6 +8,10 @@
   margin-bottom: 0.75in;
 }
 
+section[data-type="chapter"] {
+  page: chapter;
+}
+
 @page chapter:first {
   @top-left {
     content: none;
