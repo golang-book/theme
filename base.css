@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+@import "fonts/stylesheet.css"
+
+@page { /* defining overall trim size and page layout */
+  size: 6in 9in; /* width, height */
+  margin-top: 0.75in; /* white space around the page */
+  margin-bottom: 0.75in;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  -ah-kerning-mode: pair;
+  -ah-hyphenate-hyphenated-word: false;
+  hyphens: auto;
+  font-family: 'century_schoolbookregular', 'Century Schoolbook', serif;
+  font-size: 12pt;
+  line-height: 18pt;
+}
+
+section[data-type="chapter"] {
+  page-break-before: always;
+  counter-increment: ChapterNumber;
+}
+
+section[data-type="chapter"] h1 {
+  position: relative;
+  margin-left: 0.5in;
+  margin-top: 1in;
+  margin-bottom: 0.5in;
+  font-size: 20pt;
+  font-weight: bold;
+}
+
+section[data-type="chapter"] > h1:before {
+  content: counter(ChapterNumber);
+  position: absolute;
+  top: 0;
+  left: -0.5in;
+}
+
+p {
+  text-indent: 0;
+  margin: 0;
+  text-align: justify;
+  margin-bottom: 0.24in;
+}
+
+pre, code, .code {
+  font-family: "Fira Mono", monospace;
+  font-size: 10pt;
+}
+
+pre, code {
+  background: #F3F3F3;
+}
+
+code {
+  border-radius: 3px;
+  padding: 1px 2px;
+  white-space: nowrap;
+}
+
+pre {
+  padding: 8px 12px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  line-height: 18px;
+  border: 1px solid #E3E3E3;
+  page-break-inside: avoid;
+}
+
+table {
+  margin-bottom: 16px;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td {
+  border: 1px solid #E3E3E3;
+  padding: 4px 8px;
+  background: #FAFAFA;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+}
