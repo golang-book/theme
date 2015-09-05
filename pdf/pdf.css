@@ -19,22 +19,30 @@ section[data-type="chapter"] {
   @top-right {
     content: none;
   }
+  @bottom-center {
+    content: counter(page);
+    font-style: italic;
+  }
 }
 
 @page chapter:left {
   @top-left {
     content: string(ChapterTitle);
+    font-style: italic;
   }
   @top-right {
-    content: counter(page)
+    content: counter(page);
+    font-style: italic;
   }
 }
 
 @page chapter:right {
   @top-left {
-    content: counter(page)
+    content: counter(page);
+    font-style: italic;
   }
   @top-right {
     content: string(ChapterTitle);
+    font-style: italic;
   }
 }
