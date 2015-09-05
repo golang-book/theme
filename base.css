@@ -53,7 +53,7 @@ section[data-type="chapter"] h1:before {
   left: -0.5in;
 }
 section[data-type="chapter"] h2:before {
-  content: counter(ChapterNumber).counter(SectionNumber);
+  content: counter(ChapterNumber) "." counter(SectionNumber);
   position: absolute;
   top: 0;
   left: -0.5in;
