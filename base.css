@@ -6,11 +6,6 @@
   size: 6in 9in; /* width, height */
   margin-top: 0.75in; /* white space around the page */
   margin-bottom: 0.75in;
-
-  @bottom {
-    content: counter(page) "/" counter(pages);
-    text-align: center;
-  }
 }
 
 * {
@@ -42,13 +37,16 @@ section[data-type="chapter"] h1 {
   margin-bottom: 0.5in;
   font-size: 20pt;
   font-weight: bold;
+  string-set: ChapterTitle self;
 }
 
 section[data-type="chapter"] h2 {
+  position: relative;
   font-size: 13pt;
   font-weight: bold;
   margin-left: 0.5in;
   margin-bottom: 0.25in;
+  string-set: SectionTitle self;
 }
 
 section[data-type="chapter"] h1:before {
@@ -115,4 +113,32 @@ img {
 
 section.problems {
   page-break-before: always;
+}
+
+
+@page chapter:first {
+@top-left {
+  content: none;
+}
+  @top-right {
+    content: none;
+  }
+}
+
+@page chapter:left {
+  @top-left {
+    content: string(ChapterTitle);
+  }
+  @top-right {
+    content: counter(page)
+  }
+}
+
+@page chapter:right {
+  @top-left {
+    content: counter(page)
+  }
+  @top-right {
+    content: string(ChapterTitle);
+  }
 }
