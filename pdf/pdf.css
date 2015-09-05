@@ -1,3 +1,37 @@
 @charset "UTF-8";
 
 @import "../base.css"
+
+
+@page { /* defining overall trim size and page layout */
+  size: 6in 9in; /* width, height */
+  margin-top: 0.75in; /* white space around the page */
+  margin-bottom: 0.75in;
+}
+
+@page chapter:first {
+  @top-left {
+    content: none;
+  }
+  @top-right {
+    content: none;
+  }
+}
+
+@page chapter:left {
+  @top-left {
+    content: string(ChapterTitle);
+  }
+  @top-right {
+    content: counter(page)
+  }
+}
+
+@page chapter:right {
+  @top-left {
+    content: counter(page)
+  }
+  @top-right {
+    content: string(ChapterTitle);
+  }
+}

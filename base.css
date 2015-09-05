@@ -2,12 +2,6 @@
 
 @import "fonts/stylesheet.css"
 
-@page { /* defining overall trim size and page layout */
-  size: 6in 9in; /* width, height */
-  margin-top: 0.75in; /* white space around the page */
-  margin-bottom: 0.75in;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -55,6 +49,7 @@ section[data-type="chapter"] h1:before {
   top: 0;
   left: -0.5in;
 }
+
 section[data-type="chapter"] h2:before {
   content: counter(ChapterNumber) "." counter(SectionNumber);
   position: absolute;
@@ -113,32 +108,4 @@ img {
 
 section.problems {
   page-break-before: always;
-}
-
-
-@page chapter:first {
-@top-left {
-  content: none;
-}
-  @top-right {
-    content: none;
-  }
-}
-
-@page chapter:left {
-  @top-left {
-    content: string(ChapterTitle);
-  }
-  @top-right {
-    content: counter(page)
-  }
-}
-
-@page chapter:right {
-  @top-left {
-    content: counter(page)
-  }
-  @top-right {
-    content: string(ChapterTitle);
-  }
 }
